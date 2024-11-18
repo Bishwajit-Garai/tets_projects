@@ -26,7 +26,9 @@ const Category = sequelize.define('Category', {
         allowNull: false,
     },
 }, {
-    timestamps: false,  // We don't need Sequelize to manage createdAt/updatedAt
+    timestamps: true,  // Enable createdAt/updatedAt fields
+    createdAt: 'createdAt',  // You can also specify custom names if needed
+    updatedAt: 'updatedAt',
 });
 
 // Define the Expense model
@@ -44,7 +46,9 @@ const Expense = sequelize.define('Expense', {
         defaultValue: Sequelize.NOW,  // Set default date as current date
     },
 }, {
-    timestamps: false,  // We don't need Sequelize to manage createdAt/updatedAt
+    timestamps: true,  // Enable createdAt/updatedAt fields
+    createdAt: 'createdAt',  // You can also specify custom names if needed
+    updatedAt: 'updatedAt',
 });
 
 // Define the relationship between Category and Expense
